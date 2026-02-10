@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevForge Hub — Advanced Utility Toolkit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="top-nav">
+        <div class="brand">DevForge Hub</div>
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+      <div class="hero-content">
+        <p class="eyebrow">Built for modern multi-stack developers</p>
+        <h1>Advanced Discord + App Tooling in One Workspace</h1>
+        <p>
+          A supercharged toolbox for developers working with Luau, HTML, CSS, JavaScript, Java,
+          React, and more. Generate scripts, inspect payloads, transform data, and automate team
+          workflows without leaving your browser.
+        </p>
+        <div class="hero-actions">
+          <button id="openPalette" class="primary">Open Command Palette ⌘K</button>
+          <a href="#tools" class="ghost">Explore Tool Collections</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="stack-tags" aria-label="Supported developer stacks">
+        <span>Luau</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Java</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Python</span>
+      </section>
+
+      <section id="tools" class="tools-section">
+        <div class="section-head">
+          <h2>Tool Collections</h2>
+          <div class="filters" role="tablist" aria-label="Filter tools by category">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="discord">Discord</button>
+            <button class="filter" data-filter="web">Web</button>
+            <button class="filter" data-filter="backend">Backend</button>
+            <button class="filter" data-filter="automation">Automation</button>
+          </div>
+        </div>
+        <div id="toolGrid" class="tool-grid"></div>
+      </section>
+
+      <section class="playground">
+        <div class="playground-head">
+          <h2>JSON Payload Playground</h2>
+          <p>Quickly prettify or minify request/response payloads for bots and APIs.</p>
+        </div>
+        <div class="playground-body">
+          <textarea id="jsonInput" placeholder='{"event":"messageCreate","content":"Hello"}'></textarea>
+          <div class="playground-actions">
+            <button id="prettyBtn" class="primary">Prettify</button>
+            <button id="minifyBtn" class="ghost">Minify</button>
+            <button id="copyBtn" class="ghost">Copy</button>
+          </div>
+          <pre id="jsonOutput">Formatted output appears here…</pre>
+        </div>
+      </section>
+    </main>
+
+    <div id="palette" class="palette hidden" role="dialog" aria-modal="true" aria-labelledby="paletteTitle">
+      <div class="palette-box">
+        <div class="palette-header">
+          <h3 id="paletteTitle">Command Palette</h3>
+          <button id="closePalette" aria-label="Close palette">✕</button>
+        </div>
+        <input id="paletteSearch" type="text" placeholder="Search tools or actions..." />
+        <ul id="paletteResults"></ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>DevForge Hub · Advanced utility suite for high-speed developer workflows.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
